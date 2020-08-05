@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Weeks_on_excursion">
+			<state id="One" />
+			<state id="Two" />
+			<state id="Three" />
+		</decision>
+		<decision id="Vaccinated_against_hepatitis">
+			<state id="True" />
+			<state id="False" />
+			<parents>Weeks_on_excursion</parents>
+		</decision>
+		<cpt id="Partying">
+			<state id="Often" />
+			<state id="Occasional" />
+			<state id="None" />
+			<parents>Weeks_on_excursion</parents>
+			<probabilities>0.5 0.3 0.2 0.4 0.5 0.1 0.2500000000000001 0.7 0.05</probabilities>
+		</cpt>
+		<cpt id="Visit_South_Korea">
+			<state id="True" />
+			<state id="False" />
+			<parents>Weeks_on_excursion</parents>
+			<probabilities>0 1 0.3 0.7 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Visit_rural_Japan">
+			<state id="True" />
+			<state id="False" />
+			<parents>Weeks_on_excursion Visit_South_Korea</parents>
+			<probabilities>0 1 0.2 0.8 0.2 0.8 0.5 0.5 0.5 0.5 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Corona_Virus">
+			<state id="True" />
+			<state id="False" />
+			<parents>Visit_South_Korea Visit_rural_Japan Weeks_on_excursion</parents>
+			<probabilities>0.05 0.95 0.08 0.92 0.13 0.87 0.13 0.87 0.17 0.83 0.21 0.79 0.02 0.98 0.05000000000000004 0.95 0.1 0.9 0.1 0.9 0.14 0.86 0.18 0.8200000000000001</probabilities>
+		</cpt>
+		<cpt id="Hepatitis">
+			<state id="True" />
+			<state id="False" />
+			<parents>Vaccinated_against_hepatitis Partying Weeks_on_excursion</parents>
+			<probabilities>0.015 0.985 0.02 0.98 0.025 0.975 0.01 0.99 0.015 0.985 0.02 0.98 0.001 0.999 0.002 0.998 0.003 0.997 0.35 0.65 0.4 0.6 0.45 0.55 0.3 0.7 0.35 0.65 0.4 0.6 0.2 0.8 0.25 0.7500000000000001 0.3 0.6999999999999998</probabilities>
+		</cpt>
+		<utility id="Fun_U">
+			<parents>Vaccinated_against_hepatitis Weeks_on_excursion Partying</parents>
+			<utilities>15 10 5 75 65 45 95 85 70 20 15 10 80 70 55 100 90 65</utilities>
+		</utility>
+		<cpt id="Quarantine">
+			<state id="True" />
+			<state id="False" />
+			<parents>Corona_Virus</parents>
+			<probabilities>0.95 0.05000000000000004 0.1 0.9</probabilities>
+		</cpt>
+		<utility id="Study_U">
+			<parents>Weeks_on_excursion Quarantine Corona_Virus</parents>
+			<utilities>20 65 60 100 10 40 30 80 0 25 15 60</utilities>
+		</utility>
+		<utility id="Health_U">
+			<parents>Corona_Virus Hepatitis</parents>
+			<utilities>0 10 60 100</utilities>
+		</utility>
+		<mau id="Total_U">
+			<parents>Study_U Fun_U Health_U</parents>
+			<weights>0.12 0.25 0.63</weights>
+		</mau>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.4.4601.0 ACADEMIC" name="Network1" faultnameformat="nodestate">
+			<node id="Weeks_on_excursion">
+				<name>Weeks on excursion</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>333 50 421 76</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Vaccinated_against_hepatitis">
+				<name>Vaccinated against hepatitis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>659 31 726 85</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Partying">
+				<name>Partying</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>474 224 528 257</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Corona_Virus">
+				<name>Corona Virus</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>34 267 110 314</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Hepatitis">
+				<name>Hepatitis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>786 321 842 356</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Fun_U">
+				<name>Fun U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>404 510 455 542</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Quarantine">
+				<name>Quarantine</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>71 414 130 450</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Visit_rural_Japan">
+				<name>Visit rural Japan</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>208 216 297 271</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Visit_South_Korea">
+				<name>Visit South Korea</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>43 144 138 203</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Study_U">
+				<name>Study U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>241 508 299 540</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Health_U">
+				<name>Health U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>633 507 693 539</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Total_U">
+				<name>Total U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>400 605 453 637</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
