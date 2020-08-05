@@ -26,4 +26,6 @@ TIØ4252: Technology Management
 
 TMA4135: Mathematics 4D
 
+TMA4140: Discrete Mathematics
+
 TTM4100: Communication - Services and Networks

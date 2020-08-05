@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="204.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:contoller="encapsulation.AccountController">
+   <HBox prefHeight="30.0" prefWidth="312.0">
+      <children>
+         <TextField id="startBalance" prefHeight="27.0" prefWidth="99.0" promptText="Start Balance" />
+         <TextField id="startInterest" prefHeight="27.0" prefWidth="100.0" promptText="Start Interest" />
+         <Button mnemonicParsing="false" text="New Account" />
+      </children>
+   </HBox>
+   <Text id="balanceOutput" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance: 0" />
+	<Button text="Get Balance" />
+   <Text id="interestOutput" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest Rate: 0" />
+   <Button text="Get Interest Rate" />
+   <Button text="Add Interest" />
+   <HBox prefHeight="29.0" prefWidth="312.0">
+      <children>
+         <TextField id="withdrawalAmount" promptText="Amount" />
+         <Button mnemonicParsing="false" text="Withdraw" />
+      </children>
+   </HBox>
+   <HBox prefHeight="31.0" prefWidth="312.0">
+      <children>
+         <TextField id="depositAmount" promptText="Amount" />
+         <Button mnemonicParsing="false" text="Deposit" />
+      </children>
+   </HBox>
+   <HBox prefHeight="31.0" prefWidth="312.0">
+      <children>
+         <TextField id="interestInput" promptText="New Interest Rate" />
+         <Button mnemonicParsing="false" text="Set Interest Rate" />
+      </children>
+   </HBox>
+</VBox>
