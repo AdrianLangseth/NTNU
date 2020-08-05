@@ -11,6 +11,8 @@ TDT4137: Cognitive Architectures
 
 TDT4145: Data Modelling, Databases and Database Management Systems
 
+TFE4101: Electrical Circuits and Digital Design
+
 TMA4135: Mathematics 4D
 
 TTM4100: Communication - Services and Networks
