@@ -4,25 +4,27 @@ This is the repository for my work related to my studies toward a masters degree
 
 
 
-The folloing courses are uploaded:
+The following courses are uploaded:
 
-EXPH0004: Examen philosophicum for Science and Technology
+EXPH0004: Examen Philosophicum for Science and Technology
 
 TDT4100: Object-Oriented Programming
 
-TDT4117: Information Retreival
+TDT4117: Information Retrieval
 
 TDT4136: Introduction to Artificial Intelligence
 
 TDT4137: Cognitive Architectures
 
-TDT4145: Data Modelling, Databases and Database Management Systems
+TDT4145: Data Modeling, Databases and Database Management Systems
 
 TDT4171: Artificial Intelligence Methods
 
 TDT4180: Human-Computer Interaction
 
 TDT4186: Operating Systems
+
+TDT4290: Customer Driven Project
 
 TFE4101: Electrical Circuits and Digital Design
 
