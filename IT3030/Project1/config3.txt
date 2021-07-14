@@ -1,0 +1,62 @@
+# CONFIG answer to q3
+# 2000 batches takes around 70 seconds, yields test accuracy of 99.75%
+
+[DATA]
+directory = ./DATA/
+suffix = _small.csv
+
+train_x=train_X_small.csv
+train_y=train_Y_small.csv
+validate_x=validate_X_small.csv
+validate_y=validate_Y_small.csv
+test_x=test_X_small.csv
+test_y=test_Y_small.csv
+
+
+gen_data = 1
+# IF gen_data is false, rest of DATA is not regarded
+datasize = 1000
+image_types = vertical_bar,horizontal_bar,rectangle,cross
+motif_dims = 10,10
+background_dims = 20
+flatten = True
+noise = 0.01
+
+
+
+[MODEL]
+#model type pushes the loss type. classification => crossentropy, regression => MSE
+model_type = classification
+
+# layers is a comma-separated list of integers telling us how many nodes in each
+# hidden layer. Special case: If the value is only one element in the list, and
+# its value is 0, you should generate a net without a hidden layer
+layers = 256, 128, 64, 32, 10, 4
+
+# activations is a comma-separated list of key-words. It will have as many
+# elements as there are elements in the layers-list. Each keyword is a
+# non-linearity function, and legal values are relu, linear, and tanh.
+activations = sigmoid, relu, relu, relu, relu, softmax
+
+#Initial weight distributions can be either "Xavier" or "uniform". Xavier is better.
+weight_init = Xavier
+
+[HYPER]
+# Learning rate to use
+learning_rate=1.e-2
+
+# Number of epochs before finalizing, 2000 batches of 100 cases runs through the datasize 200 times.
+# needs 2000 to converge properly. at around 1000 it starts spazzing which calms at around 1250.
+batches=2000
+
+# Regularizer chooses between L2 and L1.
+regularizer = L2
+regularization_constant = 0.001
+
+random_seed = 420
+
+[DISPLAY]
+# If 0, wont display images, if >0: it will display requested amount if possible.
+display_images = 0
+visualize_type = cross
+verbose = False

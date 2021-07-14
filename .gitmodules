@@ -1,0 +1,9 @@
+[submodule "TDT4173/Anomaly Detection Project/TDT4173_Anomaly_Detection"]
+	path = TDT4173/Anomaly Detection Project/TDT4173_Anomaly_Detection
+	url = https://github.com/AdrianLangseth/TDT4173_Anomaly_Detection.git
+[submodule "IT3105/Project3/IT3105-P3"]
+	path = IT3105/Project3/IT3105-P3
+	url = https://github.com/AndreasHaaversen/IT3105-P3.git
+[submodule "TDT4290/CustomerDrivenProject"]
+	path = TDT4290/CustomerDrivenProject
+	url = https://github.com/Sanderkk/CustomerDrivenProject.git

@@ -1,0 +1,61 @@
+# Big set, 1 hidden layer
+# 1000 is enough to show convergence but will benefit from longer
+
+[DATA]
+directory = ./DATA/
+suffix = _large.csv
+
+train_x=train_X_large.csv
+train_y=train_Y_large.csv
+validate_x=validate_X_large.csv
+validate_y=validate_Y_large.csv
+test_x=test_X_large.csv
+test_y=test_Y_large.csv
+
+
+gen_data = 0
+# IF gen_data is false, rest of DATA is not regarded
+datasize = 2500
+image_types = vertical_bar,horizontal_bar,rectangle,cross
+motif_dims = 25,25
+background_dims = 50
+flatten = True
+noise = 0.05
+
+
+
+[MODEL]
+#model type pushes the loss type. classification => crossentropy, regression => MSE
+model_type = classification
+
+# layers is a comma-separated list of integers telling us how many nodes in each
+# hidden layer. Special case: If the value is only one element in the list, and
+# its value is 0, you should generate a net without a hidden layer
+layers = 128, 4
+
+# activations is a comma-separated list of key-words. It will have as many
+# elements as there are elements in the layers-list. Each keyword is a
+# non-linearity function, and legal values are relu, linear, and tanh.
+activations = sigmoid, softmax
+
+#Initial weight distributions can be either "Xavier" or "uniform". Xavier is better.
+weight_init = Xavier
+
+[HYPER]
+# Learning rate to use
+learning_rate=1.e-2
+
+# Number of epochs before finalizing
+batches=1000
+
+# Regularizer chooses between L2 and L1.
+regularizer = L2
+regularization_constant = 0.001
+
+random_seed = 420
+
+[DISPLAY]
+# If 0, it won't display images, if >0: it will display requested amount if possible.
+display_images = 0
+visualize_type = cross
+verbose = True
